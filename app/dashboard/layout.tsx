@@ -8,14 +8,17 @@ type Props = {
 
 export default function DashboardLayout({ children }: Props) {
   return (
-    <div className=''>
-        <div className=''>
+    <div className='flex'>
+
+        <div className='flex-1 bg-[#182237] p-5'>
             <Sidebar />
         </div>
-        <div className=''>
+
+        <div className='flex-4 p-5'>
             <Navbar />
             {children}
         </div>
+
     </div>
   )
 }

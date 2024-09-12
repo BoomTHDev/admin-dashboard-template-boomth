@@ -9,6 +9,17 @@ BoomTH Dev Admin Dashboard is a responsive admin dashboard template built using 
 - 🎨 Dark-themed by default with easy-to-configure global styles
 - 📱 Fully responsive design for desktop and mobile
 
+## Note Style Variable
+
+```css
+:root {
+    --bg: #151c2c;
+    --bgSoft: #182237;
+    --text: white;
+    --textSoft: #b7bac1;
+}
+```
+
 ## Installation
 
 To get started, first clone the repository, then use the package manager [bun](https://bun.sh/) to install the necessary dependencies.
