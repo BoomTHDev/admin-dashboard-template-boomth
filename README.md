@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BoomTH Dev Next.js Admin Dashboard
 
-## Getting Started
+BoomTH Dev Admin Dashboard is a responsive admin dashboard template built using **Next.js** and styled with **TailwindCSS**. This template is optimized for modern development and provides a clean, functional layout for managing admin interfaces.
 
-First, run the development server:
+## Features
+
+- ⚡️ **Next.js** for optimized performance and routing
+- 💨 **TailwindCSS** for fast, customizable styling
+- 🎨 Dark-themed by default with easy-to-configure global styles
+- 📱 Fully responsive design for desktop and mobile
+
+## Installation
+
+To get started, first clone the repository, then use the package manager [bun](https://bun.sh/) to install the necessary dependencies.
+
+### Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+git clone https://github.com/boomthdev/boomth-nextjs-dashboard.git
+cd boomth-nextjs-dashboard
+```
+### Install dependencies
+Make sure you have Bun installed. Then run:
+
+```bash
+bun install
+```
+
+## Usage
+
+Once you've installed the dependencies, you can start the development server:
+
+```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This will launch the app at **http://localhost:3000**.

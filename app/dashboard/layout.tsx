@@ -8,11 +8,11 @@ type Props = {
 
 export default function DashboardLayout({ children }: Props) {
   return (
-    <div>
-        <div>
+    <div className=''>
+        <div className=''>
             <Sidebar />
         </div>
-        <div>
+        <div className=''>
             <Navbar />
             {children}
         </div>
