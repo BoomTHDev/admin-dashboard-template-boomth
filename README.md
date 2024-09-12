@@ -18,6 +18,18 @@ BoomTH Dev Admin Dashboard is a responsive admin dashboard template built using 
     --text: white;
     --textSoft: #b7bac1;
 }
+
+.pending {
+    background-color: #f7cb7375;
+}
+
+.done {
+    background-color: #afd6ee75;
+}
+
+.cancelled {
+    background-color: #f7737375;
+}
 ```
 
 ## Installation
