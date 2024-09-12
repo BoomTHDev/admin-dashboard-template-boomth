@@ -2,6 +2,8 @@ import React from 'react'
 import { SidebarItems } from './SidebarItems'
 import SidebarLinks from './SidebarLinks'
 import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { MdLogout } from 'react-icons/md'
 
 type Props = {}
 
@@ -27,6 +29,11 @@ export default function Sidebar({}: Props) {
           </li>
         ))}
       </ul>
+
+      <Button className={`px-5 py-8 text-md flex items-center justify-start gap-2 hover:bg-[#2e374a] mt-1 mb-0 rounded-lg bg-inherit border-none w-full`}>
+        <MdLogout />
+        Logout
+      </Button>
 
     </div>
   )
