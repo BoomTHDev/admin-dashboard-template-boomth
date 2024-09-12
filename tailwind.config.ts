@@ -52,7 +52,8 @@ const config: Config = {
   			}
   		},
   		flex: {
-  			'4': '4 1 0%'
+  			'4': '4 1 0%',
+			'3': '3 1 0%',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
