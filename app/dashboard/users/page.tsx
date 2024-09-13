@@ -43,7 +43,7 @@ export default function UsersPage({}: Props) {
             <td className='p-2.5'>active</td>
             <td className='p-2.5'>
               <div className='flex items-center gap-2.5'>
-                <Link href=''>
+                <Link href='/dashboard/users/test'>
                   <Button className="h-6 w-12 rounded-md bg-teal-600 hover:bg-teal-800">View</Button>
                 </Link>
                 <Button className="h-6 w-12 rounded-md bg-red-600 hover:bg-red-800">Delete</Button>
