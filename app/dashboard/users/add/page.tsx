@@ -6,9 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import React from 'react'
 
-type Props = {}
-
-export default function AddUserPage({ }: Props) {
+export default function AddUserPage() {
   return (
     <div className='bg-[#182237] p-5 rounded-lg mt-5'>
       <form className='flex flex-wrap justify-between' action={addUser}>

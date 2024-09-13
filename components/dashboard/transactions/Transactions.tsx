@@ -1,9 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-type Props = {}
-
-export default function Transactions({ }: Props) {
+export default function Transactions() {
 
   return (
     <div className='bg-[#182237] p-5 rounded-lg'>

@@ -5,7 +5,11 @@ import { usePathname } from 'next/navigation'
 import React from 'react'
 
 type Props = {
-    item: any
+    item: {
+      icon: JSX.Element;
+      title: string;
+      path: string;
+    }
 }
 
 export default function SidebarLink({ item }: Props) {

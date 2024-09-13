@@ -5,9 +5,7 @@ import { usePathname } from 'next/navigation'
 import React from 'react'
 import { MdNotifications, MdOutlineChat, MdPublic, MdSearch } from 'react-icons/md'
 
-type Props = {}
-
-export default function Navbar({}: Props) {
+export default function Navbar() {
 
   const pathname = usePathname()
 

@@ -3,9 +3,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { signIn } from '@/actions/auth'
 
-type Props = {}
-
-export default function LoginPage({}: Props) {
+export default function LoginPage() {
   return (
     <div className='w-full h-screen flex items-center justify-center'>
 

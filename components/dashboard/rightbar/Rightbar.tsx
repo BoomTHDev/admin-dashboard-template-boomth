@@ -3,9 +3,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { MdPlayCircleFilled } from 'react-icons/md'
 
-type Props = {}
-
-export default function Rightbar({}: Props) {
+export default function Rightbar() {
   return (
     <div className='fixed'>
 

@@ -5,9 +5,7 @@ import Image from 'next/image'
 import SignOutBtn from '@/components/dashboard/sidebar/SignOutBtn'
 import { headers } from 'next/headers'
 
-type Props = {}
-
-export default async function Sidebar({}: Props) {
+export default async function Sidebar() {
   const headersList = headers()
   const username = headersList.get('X-User-Name')
   const role = headersList.get('X-User-Role')

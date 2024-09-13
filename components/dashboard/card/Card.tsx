@@ -1,9 +1,7 @@
 import React from 'react'
 import { MdSupervisedUserCircle } from 'react-icons/md'
 
-type Props = {}
-
-export default function Card({}: Props) {
+export default function Card() {
   return (
     <div className='bg-[#182237] hover:bg-[#2e374a] p-5 rounded-lg flex gap-5 cursor-pointer w-full'>
 

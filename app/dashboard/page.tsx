@@ -4,9 +4,7 @@ import Rightbar from '@/components/dashboard/rightbar/Rightbar'
 import Transactions from '@/components/dashboard/transactions/Transactions'
 import React from 'react'
 
-type Props = {}
-
-export default function DashboardPage({ }: Props) {
+export default function DashboardPage() {
   return (
     <div className='flex gap-5 mt-5'>
 
