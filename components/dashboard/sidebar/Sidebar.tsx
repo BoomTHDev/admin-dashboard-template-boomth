@@ -2,20 +2,25 @@ import React from 'react'
 import { SidebarItems } from './SidebarItems'
 import SidebarLinks from './SidebarLinks'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import { MdLogout } from 'react-icons/md'
+import SignOutBtn from '@/components/dashboard/sidebar/SignOutBtn'
+import { headers } from 'next/headers'
 
 type Props = {}
 
-export default function Sidebar({}: Props) {
+export default async function Sidebar({}: Props) {
+  const headersList = headers()
+  const username = headersList.get('X-User-Name')
+  const role = headersList.get('X-User-Role')
+  const img = headersList.get('X-User-Img')
+
   return (
     <div className='sticky top-10'>
 
       <div className='flex items-center gap-5 mb-5'>
-        <Image src='/noavatar.png' alt='' width={50} height={50} className='rounded-full object-cover' />
+        <Image src={img || '/noavatar.png'} alt='' width={50} height={50} className='rounded-full object-cover' />
         <div className='flex flex-col'>
-          <span className='font-medium'>BoomTH</span>
-          <span className='text-xs text-[#b7bac1]'>Administrator</span>
+          <span className='font-medium'>{username}</span>
+          <span className='text-xs text-[#b7bac1]'>{role}</span>
         </div>
       </div>
 
@@ -30,10 +35,7 @@ export default function Sidebar({}: Props) {
         ))}
       </ul>
 
-      <Button className={`px-5 py-8 text-md flex items-center justify-start gap-2 hover:bg-[#2e374a] mt-1 mb-0 rounded-lg bg-inherit border-none w-full`}>
-        <MdLogout />
-        Logout
-      </Button>
+        <SignOutBtn />
 
     </div>
   )

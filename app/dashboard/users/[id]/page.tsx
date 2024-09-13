@@ -11,6 +11,8 @@ type Props = {
     params: { id: string }
 }
 
+export const dynamic = 'force-dynamic'
+
 export default async function SingleUserPage({ params }: Props) {
     const user = await getUser(params.id)
 
@@ -37,7 +39,7 @@ export default async function SingleUserPage({ params }: Props) {
                 <Input type='email' name='email' placeholder={user?.email} defaultValue={user?.email} className='p-5 border-2 border-[#2e374a] rounded-md bg-[#151c2c] text-white my-2.5 mx-0' />
 
                 <Label className='text-xs'>Password</Label>
-                <Input type='password' name='password' className='p-5 border-2 border-[#2e374a] rounded-md bg-[#151c2c] text-white my-2.5 mx-0' />
+                <Input type='password' name='password' placeholder='********' defaultValue={user?.password} className='p-5 border-2 border-[#2e374a] rounded-md bg-[#151c2c] text-white my-2.5 mx-0' />
 
                 <Label className='text-xs'>Phone</Label>
                 <Input type='text' name='phone' placeholder={user?.phone ?? ''} defaultValue={user?.phone ?? ''} className='p-5 border-2 border-[#2e374a] rounded-md bg-[#151c2c] text-white my-2.5 mx-0' />

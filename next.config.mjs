@@ -6,6 +6,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'pixels.com'
+            },
+            {
+                protocol: 'https',
+                hostname: 'render.fineartamerica.com'
             }
         ]
     }
