@@ -49,6 +49,12 @@ Make sure you have Bun installed. Then run:
 bun install
 ```
 
+Copy example environment to development environment
+
+```bash
+cp .env.example .env.development
+```
+
 ## Usage
 
 Once you've installed the dependencies, you can start the development server:
