@@ -1,3 +1,4 @@
+import { addProduct } from '@/actions/addData'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
@@ -9,7 +10,7 @@ type Props = {}
 export default function AddProductPage({ }: Props) {
   return (
     <div className='bg-[#182237] p-5 rounded-lg mt-5'>
-      <form className='flex flex-wrap justify-between' action="">
+      <form className='flex flex-wrap justify-between' action={addProduct}>
         <Input type='text' placeholder='title' name='title' className='p-7 w-[45%] bg-[#151c2c] text-white mb-7 border-2 border-[#2e374a]' />
 
         <Select>

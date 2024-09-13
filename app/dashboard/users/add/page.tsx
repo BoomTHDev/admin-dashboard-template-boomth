@@ -1,8 +1,8 @@
 'use client'
 
+import { addUser } from '@/actions/addData'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import React from 'react'
 
@@ -11,7 +11,7 @@ type Props = {}
 export default function AddUserPage({ }: Props) {
   return (
     <div className='bg-[#182237] p-5 rounded-lg mt-5'>
-      <form className='flex flex-wrap justify-between' action="">
+      <form className='flex flex-wrap justify-between' action={addUser}>
         <Input type='text' placeholder='username' name='username' className='p-7 w-[45%] bg-[#151c2c] text-white mb-7 border-2 border-[#2e374a]' />
         <Input type='email' placeholder='email' name='email' className='p-7 w-[45%] bg-[#151c2c] text-white mb-7 border-2 border-[#2e374a]' />
         <Input type='password' placeholder='password' name='password' className='p-7 w-[45%] bg-[#151c2c] text-white mb-7 border-2 border-[#2e374a]' />

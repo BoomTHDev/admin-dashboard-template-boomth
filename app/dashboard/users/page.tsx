@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Pagination from '@/components/dashboard/pagination/Pagination'
-import { getUsers } from '@/actions/data'
+import { getUsers } from '@/actions/getData'
 
 type Props = {
   searchParams: {

@@ -28,12 +28,14 @@ model User {
 }
 
 model Product {
-  id    String  @id @default(uuid())
-  title String  @unique
-  desc  String
-  price Int
-  stock Int
-  img   String?
-  color String?
-  size  String?
+  id        String   @id @default(uuid())
+  title     String   @unique
+  desc      String
+  price     Int
+  stock     Int
+  img       String?
+  color     String?
+  size      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
