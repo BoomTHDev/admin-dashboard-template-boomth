@@ -43,7 +43,7 @@ export default async function UsersPage({ searchParams }: Props) {
           </tr>
         </thead>
         <tbody>
-          {users.map((user, index) => (
+          {users && users.map((user, index) => (
             <tr key={index}>
             <td className='p-2.5'>
               <div className='flex gap-2.5 items-center'>
@@ -71,7 +71,7 @@ export default async function UsersPage({ searchParams }: Props) {
           
         </tbody>
       </table>
-      <Pagination count={count} />
+      <Pagination count={count || 0} />
     </div>
   )
 }

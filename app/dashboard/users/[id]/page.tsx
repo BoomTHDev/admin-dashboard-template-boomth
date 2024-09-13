@@ -14,7 +14,7 @@ type Props = {
 export const dynamic = 'force-dynamic'
 
 export default async function SingleUserPage({ params }: Props) {
-    const user = await getUser(params.id)
+    const { user } = await getUser(params.id)
 
   return (
     <div className='flex gap-10 mt-5'>

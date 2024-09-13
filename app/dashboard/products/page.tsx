@@ -8,7 +8,6 @@ import Pagination from '@/components/dashboard/pagination/Pagination'
 import { getProducts } from '@/actions/getData'
 import { delProduct } from '@/actions/delData'
 import { formatCurrency, formatNumber } from '@/lib/formatter'
-import { Product } from '@prisma/client'
 
 type Props = {
   searchParams: {

@@ -32,7 +32,7 @@ export async function getUser(id: string) {
                 id
             }
         })
-        return user
+        return { user, success: true }
     } catch(error: any) {
         console.log(error)
         return { error: error.message , success: false }
