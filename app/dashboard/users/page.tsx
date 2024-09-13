@@ -4,10 +4,19 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Pagination from '@/components/dashboard/pagination/Pagination'
+import { getUsers } from '@/actions/data'
 
-type Props = {}
+type Props = {
+  searchParams: {
+    q: string
+  }
+}
 
-export default function UsersPage({}: Props) {
+export default async function UsersPage({ searchParams }: Props) {
+
+  const q = searchParams?.q || ""
+  const users = await getUsers(q)
+
   return (
     <div className='bg-[#182237] p-5 rounded-md mt-5'>
 
@@ -30,26 +39,29 @@ export default function UsersPage({}: Props) {
           </tr>
         </thead>
         <tbody>
-          <tr>
+          {users.map((user, index) => (
+            <tr key={index}>
             <td className='p-2.5'>
               <div className='flex gap-2.5 items-center'>
-                <Image src='/noavatar.png' alt='' width={40} height={40} className='object-cover rounded-full' />
-                BoomTH
+                <Image src={user.img || '/noavatar.png'} alt='' width={40} height={40} className='object-cover rounded-full' />
+                {user.username}
               </div>
             </td>
-            <td className='p-2.5'>boomth@gmail.com</td>
-            <td className='p-2.5'>20.09.2024</td>
-            <td className='p-2.5'>Admin</td>
-            <td className='p-2.5'>active</td>
+            <td className='p-2.5'>{user.email}</td>
+            <td className='p-2.5'>{user.createdAt.toString().slice(4, 16)}</td>
+            <td className='p-2.5'>{user.isAdmin ? 'Admin' : 'Client'}</td>
+            <td className='p-2.5'>{user.isActive ? 'active' : 'passive'}</td>
             <td className='p-2.5'>
               <div className='flex items-center gap-2.5'>
-                <Link href='/dashboard/users/test'>
+                <Link href={`/dashboard/users/${user.id}`}>
                   <Button className="h-6 w-12 rounded-md bg-teal-600 hover:bg-teal-800">View</Button>
                 </Link>
                 <Button className="h-6 w-12 rounded-md bg-red-600 hover:bg-red-800">Delete</Button>
               </div>
             </td>
           </tr>
+          ))}
+          
         </tbody>
       </table>
       <Pagination />
