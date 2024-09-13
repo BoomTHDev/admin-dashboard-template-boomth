@@ -10,7 +10,7 @@ export default function DashboardLayout({ children }: Props) {
   return (
     <div className='flex'>
 
-        <div className='flex-1 bg-[#182237] p-5'>
+        <div className='flex-1 bg-[#182237] p-5 min-h-screen'>
             <Sidebar />
         </div>
 
