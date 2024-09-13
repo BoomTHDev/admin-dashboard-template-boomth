@@ -21,7 +21,21 @@ export async function getUsers(q: string, page: string) {
         return { count, users }
     } catch (error: any) {
         console.log(error)
-        throw new Error('failed to fetch')
+        throw new Error('failed to fetch users!')
+    }
+}
+
+export async function getUser(id: string) {
+    try {
+        const user = await db.user.findUnique({
+            where: {
+                id
+            }
+        })
+        return user
+    } catch(error: any) {
+        console.log(error)
+        throw new Error('failed to fetch user!')
     }
 }
 
@@ -44,6 +58,20 @@ export async function getProducts(q: string, page: string) {
         return { count, products }
     } catch (error: any) {
         console.log(error)
-        throw new Error('failed to fetch')
+        throw new Error('failed to fetch products!')
+    }
+}
+
+export async function getProduct(id: string) {
+    try {
+        const product = await db.product.findUnique({
+            where: {
+                id
+            }
+        })
+        return product
+    } catch(error: any) {
+        console.log(error)
+        throw new Error('failed to fetch product!')
     }
 }

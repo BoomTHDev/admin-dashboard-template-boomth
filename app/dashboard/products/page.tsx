@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Pagination from '@/components/dashboard/pagination/Pagination'
 import { getProducts } from '@/actions/getData'
 import { delProduct } from '@/actions/delData'
+import { formatCurrency, formatNumber } from '@/lib/formatter'
 
 type Props = {
   searchParams: {
@@ -50,9 +51,9 @@ export default async function ProductsPage({ searchParams }: Props) {
                 </div>
               </td>
               <td className='p-2.5'>{product.desc}</td>
-              <td className='p-2.5'>{product.price}</td>
+              <td className='p-2.5'>{formatCurrency(product.price)}</td>
               <td className='p-2.5'>{product.createdAt.toString().slice(4, 16)}</td>
-              <td className='p-2.5'>{product.stock}</td>
+              <td className='p-2.5'>{formatNumber(product.stock)}</td>
               <td className='p-2.5'>
                 <div className='flex items-center gap-2.5'>
                   <Link href={`/dashboard/products/${product.id}`}>
