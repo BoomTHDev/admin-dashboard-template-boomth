@@ -31,7 +31,7 @@ export async function addUser(formData: FormData) {
         })
     } catch (error: any) {
         console.log(error)
-        throw new Error('Failed to create user')
+        return { error: error.message, success: false };
     }
 
     revalidatePath('/dashboard/users')
@@ -59,7 +59,7 @@ export async function addProduct(formData: FormData) {
         })
     } catch (error: any) {
         console.log(error)
-        throw new Error('Failed to create product')
+        return { error: error.message, success: false };
     }
 
     revalidatePath('/dashboard/products')

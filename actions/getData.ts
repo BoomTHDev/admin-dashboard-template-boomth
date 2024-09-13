@@ -21,7 +21,7 @@ export async function getUsers(q: string, page: string) {
         return { count, users }
     } catch (error: any) {
         console.log(error)
-        throw new Error('failed to fetch users!')
+        return { error: error.message , success: false }
     }
 }
 
@@ -35,7 +35,7 @@ export async function getUser(id: string) {
         return user
     } catch(error: any) {
         console.log(error)
-        throw new Error('failed to fetch user!')
+        return { error: error.message , success: false }
     }
 }
 
@@ -58,7 +58,7 @@ export async function getProducts(q: string, page: string) {
         return { count, products }
     } catch (error: any) {
         console.log(error)
-        throw new Error('failed to fetch products!')
+        return { error: error.message , success: false }
     }
 }
 
@@ -69,9 +69,9 @@ export async function getProduct(id: string) {
                 id
             }
         })
-        return product
+        return { product, success: true }
     } catch(error: any) {
         console.log(error)
-        throw new Error('failed to fetch product!')
+        return { error: error.message , success: false }
     }
 }

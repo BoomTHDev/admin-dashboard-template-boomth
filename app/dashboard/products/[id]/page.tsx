@@ -13,7 +13,7 @@ type Props = {
 
 export default async function SingleProductPage({ params }: Props) {
 
-    const product = await getProduct(params.id)
+    const { product } = await getProduct(params.id)
 
   return (
     <div className='flex gap-10 mt-5'>

@@ -49,7 +49,7 @@ export async function signIn(formData: FormData) {
     });
   } catch (error: any) {
     console.log(error);
-    throw new Error(error.message);
+    return { error: error.message, success: false };
   }
 
   redirect("/dashboard");

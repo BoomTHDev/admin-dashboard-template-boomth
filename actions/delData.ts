@@ -13,7 +13,7 @@ export async function delUser(formData: FormData) {
         })
     } catch (error: any) {
         console.log(error)
-        throw new Error('Failed to user product!')
+        return { error: error.message , success: false }
     }
     revalidatePath('/dashboard/users')
 }
@@ -28,7 +28,7 @@ export async function delProduct(formData: FormData) {
         })
     } catch (error: any) {
         console.log(error)
-        throw new Error('Failed to delete product!')
+        return { error: error.message , success: false }
     }
     revalidatePath('/dashboard/products')
 }
