@@ -8,6 +8,7 @@ import Pagination from '@/components/dashboard/pagination/Pagination'
 import { getProducts } from '@/actions/getData'
 import { delProduct } from '@/actions/delData'
 import { formatCurrency, formatNumber } from '@/lib/formatter'
+import { Product } from '@prisma/client'
 
 type Props = {
   searchParams: {
@@ -20,6 +21,7 @@ export default async function ProductsPage({ searchParams }: Props) {
   const q = searchParams?.q || ""
   const page = searchParams?.page || "1"
   const { count, products } = await getProducts(q, page)
+
   return (
     <div className='bg-[#182237] p-5 rounded-md mt-5'>
 
@@ -42,7 +44,7 @@ export default async function ProductsPage({ searchParams }: Props) {
           </tr>
         </thead>
         <tbody>
-          {products.map((product, index) => (
+          {products && products.map((product, index) => (
             <tr key={index}>
               <td className='p-2.5'>
                 <div className='flex gap-2.5 items-center'>
@@ -69,7 +71,7 @@ export default async function ProductsPage({ searchParams }: Props) {
           ))}
         </tbody>
       </table>
-      <Pagination count={count} />
+      <Pagination count={count || 0} />
     </div>
   )
 }
