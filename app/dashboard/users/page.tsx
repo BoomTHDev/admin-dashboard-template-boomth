@@ -9,13 +9,15 @@ import { getUsers } from '@/actions/data'
 type Props = {
   searchParams: {
     q: string
+    page: string
   }
 }
 
 export default async function UsersPage({ searchParams }: Props) {
 
   const q = searchParams?.q || ""
-  const users = await getUsers(q)
+  const page = searchParams?.page || "1"
+  const { count, users } = await getUsers(q, page)
 
   return (
     <div className='bg-[#182237] p-5 rounded-md mt-5'>
@@ -64,7 +66,7 @@ export default async function UsersPage({ searchParams }: Props) {
           
         </tbody>
       </table>
-      <Pagination />
+      <Pagination count={count} />
     </div>
   )
 }
