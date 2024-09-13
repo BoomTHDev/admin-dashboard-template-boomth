@@ -1,10 +1,12 @@
 import Search from '@/components/dashboard/search/Search'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Pagination from '@/components/dashboard/pagination/Pagination'
 import { getUsers } from '@/actions/getData'
+import { delUser } from '@/actions/delData'
 
 type Props = {
   searchParams: {
@@ -58,7 +60,10 @@ export default async function UsersPage({ searchParams }: Props) {
                 <Link href={`/dashboard/users/${user.id}`}>
                   <Button className="h-6 w-12 rounded-md bg-teal-600 hover:bg-teal-800">View</Button>
                 </Link>
-                <Button className="h-6 w-12 rounded-md bg-red-600 hover:bg-red-800">Delete</Button>
+                <form action={delUser}>
+                  <Input type='hidden' name='id' value={user.id} />
+                  <Button className="h-6 w-12 rounded-md bg-red-600 hover:bg-red-800">Delete</Button>
+                </form>
               </div>
             </td>
           </tr>

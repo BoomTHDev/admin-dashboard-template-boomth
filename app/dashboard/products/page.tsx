@@ -1,10 +1,12 @@
 import Search from '@/components/dashboard/search/Search'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Pagination from '@/components/dashboard/pagination/Pagination'
 import { getProducts } from '@/actions/getData'
+import { delProduct } from '@/actions/delData'
 
 type Props = {
   searchParams: {
@@ -56,7 +58,10 @@ export default async function ProductsPage({ searchParams }: Props) {
                   <Link href={`/dashboard/products/${product.id}`}>
                     <Button className="h-6 w-12 rounded-md bg-teal-600 hover:bg-teal-800">View</Button>
                   </Link>
-                  <Button className="h-6 w-12 rounded-md bg-red-600 hover:bg-red-800">Delete</Button>
+                  <form action={delProduct}>
+                    <Input type='hidden' name='id' value={product.id} />
+                    <Button className="h-6 w-12 rounded-md bg-red-600 hover:bg-red-800">Delete</Button>
+                  </form>
                 </div>
               </td>
             </tr>
