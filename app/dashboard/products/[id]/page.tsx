@@ -13,7 +13,10 @@ type Props = {
 
 export default async function SingleProductPage({ params }: Props) {
 
-    const { product } = await getProduct(params.id)
+    const { product, error } = await getProduct(params.id)
+    if (error) {
+        console.log(error)
+    }
 
   return (
     <div className='flex gap-10 mt-5'>
@@ -22,7 +25,7 @@ export default async function SingleProductPage({ params }: Props) {
             <div className='w-full h-[300px] relative rounded-lg overflow-hidden mb-5'>
                 <Image src='/noavatar.png' alt='' fill className='' />
             </div>
-            {product?.title}
+            {product && product?.title}
 
         </div>
 

@@ -60,7 +60,7 @@ export async function updateUser(formData: FormData) {
     }
   } catch (error: any) {
     console.log(error);
-    return { error: "failed to update user", success: false };
+    return { error: error.message, success: false };
   }
   revalidatePath("/dashboard/users");
   redirect("/dashboard/users");
@@ -89,7 +89,7 @@ export async function updateProduct(formData: FormData) {
     });
   } catch (error: any) {
     console.log(error);
-    return { error: "failed to update product", success: false };
+    return { error: error.message, success: false };
   }
   revalidatePath("/dashboard/products");
   redirect("/dashboard/products");
@@ -126,6 +126,6 @@ export async function refreshToken(id: string) {
     });
   } catch (error: any) {
     console.log(error);
-    return { error: "failed to refresh token", success: false };
+    return { error: error.message, success: false };
   }
 }
