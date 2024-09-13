@@ -13,7 +13,7 @@ export default function ProductsPage({}: Props) {
 
       <div className='flex items-center justify-between'>
         <Search placeholder='Search for a product...' />
-        <Link href='/dashboard/users/add'>
+        <Link href='/dashboard/products/add'>
           <Button className='bg-[#5d57c9] hover:bg-[#3e3b8b] text-white'>Add New</Button>
         </Link>
       </div>
